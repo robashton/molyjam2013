@@ -1,0 +1,4 @@
+--require should
+--recursive
+--globals attr
+-t 10000
