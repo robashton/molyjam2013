@@ -17,6 +17,11 @@ module.exports = function() {
     game.takeAction(action)
   }
 
+  self.executeTicks = function(count) {
+    for(var i = 0; i < count ; i++)
+      game.tick()
+  }
+
   self.hasAvailableAction = function(action) {
     var exists = false
     game.availableActions().forEach(function(existing) {

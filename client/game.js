@@ -22,13 +22,15 @@ Game.prototype = {
   },
   changeState: function(state) {
     this.state = state
+  },
+  tick: function() {
+    this.state.tick()
   }
 }
-
 var PlantAcorn = {
   text: 'Plant acorn',
   cb: function(game) {
-    game.changeState(EmptyState)
+    game.changeState(WaitingState)
   }
 }
 
@@ -37,9 +39,11 @@ var StartState = {
   actions: [ PlantAcorn ]
 }
 
-
-var EmptyState = { 
-  actions: []
+var WaitingState = { 
+  actions: [],
+  tick: function() {
+l
+  }
 }
 
 module.exports = Game
