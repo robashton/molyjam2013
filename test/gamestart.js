@@ -24,20 +24,3 @@ describe("Taking the first action", function() {
     game.hasAvailableAction('Plant acorn').should.equal(false)
   })
 })
-
-describe("Gaining acorns over time", function() {
-  var game = new Game()
-
-  before(function() {
-    game.takeAction('Plant acorn')
-    game.executeTicks(10)
-  })
-
-  it("no longer has the action 'Plant acorn' available", function() {
-    game.hasAvailableAction('Plant acorn').should.equal(false)
-  })
-
-  it("has the blurb 'watching the tree grow as time passes'", function() {
-    game.currentBlurb().should.include('watching the tree grow as time passes')
-  })
-})

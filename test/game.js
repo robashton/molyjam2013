@@ -30,5 +30,9 @@ module.exports = function() {
     })
     return exists
   }
+
+  self.countItemsInInventory = function(item) {
+    return game.inventory.count(item)
+  }
 }
 

@@ -1,6 +1,10 @@
+var Inventory = require('./inventory')
+
 var Game = function() {
   this.state = StartState
+  this.inventory = new Inventory()
 }
+
 
 Game.prototype = {
   availableActions: function() {
@@ -24,7 +28,7 @@ Game.prototype = {
     this.state = state
   },
   tick: function() {
-    this.state.tick()
+    this.state.tick(this)
   }
 }
 var PlantAcorn = {
@@ -41,9 +45,13 @@ var StartState = {
 
 var WaitingState = { 
   actions: [],
-  tick: function() {
-l
+  tick: function(game) {
+    game.inventory.add(Acorn)
   }
+}
+
+var Acorn = {
+  name: "acorn(s)"
 }
 
 module.exports = Game
