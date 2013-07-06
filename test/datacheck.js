@@ -22,5 +22,19 @@ describe("States", function() {
       })
     })
   }
+})
+
+describe("Events", function() {
+  for(var k in Events) {
+    describe("Event " + k, function() {
+      var ev = Events[k]
+      if(!ev.actions) return
+      it("has valid possible actions", function() {
+        for(var i =0 ; i < ev.actions.length; i++) {
+          should.exist(Actions[ev.actions[i]])
+        }
+      })
+    })
+  }
 
 })

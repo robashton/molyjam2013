@@ -3,11 +3,16 @@ var Game = require('./game')
 
 game.on('state-changed', function() {
   console.log(game.currentBlurb())
+  console.log('----------')
   console.log(game.availableActions().map(function(s) { return s.text }).join())
+  console.log('----------')
 })
 
 game.on('random-encounter', function() {
   console.log(game.activeEvent.text)
+  console.log('----------')
+  console.log(game.availableActions().map(function(s) { return s.text }).join())
+  console.log('----------')
 })
 
 setInterval(function() {

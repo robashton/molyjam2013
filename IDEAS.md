@@ -50,12 +50,36 @@ So the game is about balancing the spending of acorns for short term gain, vs ho
 
 - Tell a story during this
   => Tree needs to grow
-  => Tree needs to shed an acorn every now and then
 
 - Events
-  => Squirrel comes and asks for an acorn
-    => Give it
-    => Don't give it
-  
 
+=> Squirrel comes and asks whatcha doing (only on return from the river)
+  => He'll give you a bucket if you tell him
+  => Else go back to waiting
 
+=> Explore down near the river
+  => Can gather water if you have a bucket
+  => Can use the key if you have it
+
+=> Can water the tree if you have a bucket of water
+  => Receive an acorn everytime you water the tree
+
+=> If we have 10 acorns, we can buy a shovel from another squirrel
+=> We can dig a channel from the river to the tree
+
+=> Acorns now come automatically which is nice
+=> At 20 acorns a branch falls off tree, we can use this to quest with
+
+=> Let's go on a quest along the river
+  => Meet a <enemy>, he might fight you
+  => You can pay him acorns not to and escape
+  => You can throw acorns at him to fight
+  => You can heal with acorns if you do fight
+  => <enemy> drops items that might be useful
+  => Keep going or return?
+  => Dying means losing all your acorns so far
+
+  => As you level up, the tree levels up too, produces more acorns?
+  => Spend acorns on upgrading stick
+
+  => Win once tree is level 10

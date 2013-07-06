@@ -4,11 +4,11 @@ module.exports = {
     text: "Smooth and polished, the way mother always liked them"
   },
   "bucket": {
-    name: "Bucket",
+    name: "bucket",
     text: "An empty bucket, serviceable at least"
   },
   "bucketofwater": {
-    name: "Bucket of water",
+    name: "bucket of water",
     text: "I filled this bucket with water from the river myself"
   }
 }

@@ -7,6 +7,8 @@ var Inventory = require('./inventory')
 
 var Game = function() {
   EventEmitter.call(this)
+  this.flags = {}
+  this.activeEvent = false
   this.inventory = new Inventory()
 }
 
@@ -16,7 +18,12 @@ Game.prototype = {
   },
   availableActions: function() {
     var game = this
-    return this.state.actions
+      , actions = this.state.actions
+
+    if(this.activeEvent && this.activeEvent.actions)
+      actions = actions.concat(this.activeEvent.actions)
+
+    return actions
       .map(function(s) {
         return Actions[s]
       })
@@ -30,14 +37,14 @@ Game.prototype = {
     return this.state.blurb
   },
   takeAction: function(action) {
-    var selected = this.state.actions
-      .map(function(s) {
-        return Actions[s]
-      })
+    var selected = this.availableActions()
       .filter(function(s) {
         return s.text === action
     })[0]
     selected.cb(this)
+  },
+  feedback: function(msg) {
+    this.emit('feedback', msg)
   },
   registerAction: function(action, cb) {
     this.actions[action] = cb
@@ -55,11 +62,19 @@ Game.prototype = {
     var possibleEvents = this.state.possibleEvents
     var ev = possibleEvents[Math.floor(Math.random() * possibleEvents.length)]
       , evinfo  = Events[ev]
-    this.setActiveEvent(evinfo)
+    if(!ev.valid || ev.valid(this))
+      this.setActiveEvent(evinfo)
   },
   setActiveEvent: function(ev) {
     this.activeEvent = ev
     this.emit('random-encounter')
+  },
+  clearEncounters: function() {
+    this.activeEvent = null
+    this.emit('state-changed')
+  },
+  kill: function() {
+    console.error('Not implemented yet')
   }
 }
 extend(Game.prototype, EventEmitter.prototype)

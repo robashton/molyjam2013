@@ -19,5 +19,20 @@ module.exports = {
   },
   'treesrustle': {
     text: "the trees around the river emit a slow rustle as the breeze flows between their branches like the water travelling beneath them"
+  },
+  'badgerinterest': {
+    valid: function(game) {
+      return game.inventory.count('bucket') === 0 
+    },
+    text: "A passing badger looks over with interest at my project and gives me a glancing smile",
+    actions: [ 'smileatbadger', 'throwacornatbadger', 'ignorebadger' ]
+  },
+  'squirrelshop': {
+    valid: function(game) {
+      return game.inventory.count('acorn') > 10 && 
+             game.inventory.count('shovel') === 0
+    },
+    actions: [ 'buyshovel' ],
+    text: "A squirrel bounds up to the foot of my tree and asks if I want to buy a shovel for 10 acorns, seems my hard work has not gone unnoticed by the most enteprising amongst us"
   }
 }
