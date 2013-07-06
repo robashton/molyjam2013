@@ -9,6 +9,7 @@ var Game = function() {
   EventEmitter.call(this)
   this.flags = {}
   this.activeEvent = false
+  this.state = null
   this.inventory = new Inventory()
 }
 

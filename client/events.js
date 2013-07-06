@@ -29,7 +29,7 @@ module.exports = {
   },
   'squirrelshop': {
     valid: function(game) {
-      return game.inventory.count('acorn') > 10 && 
+      return game.inventory.count('acorn(s)') > 10 && 
              game.inventory.count('shovel') === 0
     },
     actions: [ 'buyshovel' ],
