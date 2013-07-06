@@ -15,10 +15,16 @@ Game.prototype = {
     this.changeState("start")
   },
   availableActions: function() {
-    return this.state.actions.map(function(s) {
-      var action = Actions[s]
-      return action.text
-    })
+    var game = this
+    return this.state.actions
+      .map(function(s) {
+        return Actions[s]
+      })
+      .filter(function(s) {
+        if(s.valid && !s.valid(game))
+          return false
+        return true
+      })
   },
   currentBlurb: function() {
     return this.state.blurb

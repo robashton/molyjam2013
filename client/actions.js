@@ -25,8 +25,12 @@ module.exports = {
   },
   'takewater': {
     text: 'Fill your bucket with water',
-    cb: function() {
-
+    valid: function(game) {
+      return game.inventory.count('bucket') === 1
+    },
+    cb: function(game) {
+      game.inventory.remove('bucket')
+      game.inventory.add('bucketofwater')
     }
    },
   'watertree': {

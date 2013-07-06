@@ -27,7 +27,7 @@ module.exports = function() {
   self.hasAvailableAction = function(action) {
     var exists = false
     game.availableActions().forEach(function(existing) {
-      if(existing === action)
+      if(existing.text === action)
         exists = true
     })
     return exists

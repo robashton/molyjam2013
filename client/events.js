@@ -18,6 +18,6 @@ module.exports = {
     text: 'A fish flops out of the water, presumably chasing a fly. how strange it is thinking that there is life under the water when I can\'t even swim'
   },
   'treesrustle': {
-    text: "the trees around the river emit a slow rustle as the breeze flows between their branches like the river below them"
+    text: "the trees around the river emit a slow rustle as the breeze flows between their branches like the water travelling beneath them"
   }
 }
