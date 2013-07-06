@@ -9,7 +9,7 @@ describe("A new game", function() {
   })
 
   it("describes that the player has an acorn", function() {
-      game.currentBlurb().should.include('have an acorn')
+      game.currentBlurb().should.include('hold a single acorn')
   })
 })
 

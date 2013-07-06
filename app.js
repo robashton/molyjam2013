@@ -4,7 +4,7 @@ var express = require('express')
 
 var app = express()
 
-app.set('port', process.env.PORT || 6000)
+app.set('port', process.env.PORT || 7000)
 app.set('views', __dirname + '/server')
 app.set('view engine', 'jade')
 app.use(require('stylus').middleware(

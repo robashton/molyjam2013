@@ -39,4 +39,23 @@ So the game is about balancing the spending of acorns for short term gain, vs ho
   - Turn based
   - On reaching 1000 acorns, we get the golden acorn
 
+# Story so far
+
+- You have an acorn, and you plant it     [x]
+  - You can choose to eat it, game over
+- Ticks are every 5 seconds
+  => after 5 ticks, the tree appears
+  => after 10 ticks, you start gaining acorns (small numbers)
+  => after 15 ticks, you start getting options
+
+- Tell a story during this
+  => Tree needs to grow
+  => Tree needs to shed an acorn every now and then
+
+- Events
+  => Squirrel comes and asks for an acorn
+    => Give it
+    => Don't give it
+  
+
 
