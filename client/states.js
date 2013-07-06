@@ -11,7 +11,8 @@ module.exports = {
     actions: [],
     possibleEvents: [ "birdwheeling", "cloudoversun" ],
     tick: function(game) {
-      game.inventory.add("acorn")
+      if(Math.random() < 0.1)
+        game.inventory.add("acorn")
     }
   }
 }

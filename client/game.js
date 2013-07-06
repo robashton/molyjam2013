@@ -1,6 +1,7 @@
 var Inventory = require('./inventory')
   , States = require('./states')
   , Actions = require('./actions')
+  , Events = require('./events')
 
 var Game = function() {
   this.inventory = new Inventory()
@@ -34,7 +35,18 @@ Game.prototype = {
     this.state = States[state]
   },
   tick: function() {
+    if(Math.random() < 0.1) 
+      this.randomEncounter()
     this.state.tick(this)
+  },
+  randomEncounter: function() {
+    var possibleEvents = this.state.possibleEvents
+    var ev = possibleEvents[Math.floor(Math.random() * possibleEvents.length)]
+      , evinfo  = Events[ev]
+    this.setActiveEvent(evinfo)
+  },
+  setActiveEvent: function(ev) {
+    this.activeEvent = ev
   }
 }
 

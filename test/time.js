@@ -5,11 +5,11 @@ describe("Gaining acorns over time", function() {
 
   before(function() {
     game.takeAction('Plant acorn')
-    game.executeTicks(10)
+    game.executeTicks(1000)
   })
 
-  it("has 10 acorns after 10 ticks", function() {
-    game.countItemsInInventory('acorn(s)').should.equal(10)
+  it("has some acorns after 1000 ticks", function() {
+    game.countItemsInInventory('acorn(s)').should.be.above(1)
   })
 
 })
