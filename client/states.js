@@ -26,7 +26,7 @@ module.exports = {
     },
   },
   "atthetree": {
-    blurb: "The tree I planted has grown since I was last here, the desire to take in the sun's warm embrace is a powerful motivation to get out of bed",
+    blurb: "The tree I planted has grown since I was last here, the desire to take in the sun's warm embrace is a powerful motivation for one to get out of bed",
     actions: [ 'gotoriver', 'waitlonger', 'watertree' ],
     possibleEvents: [ 'birdwheeling', 'cloudoversun', 'treegrow2' ],
     tick: function() {
@@ -34,7 +34,7 @@ module.exports = {
     },
   },
   "waitabitlonger": {
-    blurb: 'The sun caresses my skin and I wait a little while longer to see what the day will next bring',
+    blurb: 'The sun caresses my skin and I wait a little while longer to see what the day will bring next',
     actions: [],
     possibleEvents: [ 'birdwheeling', 'cloudoversun', 'treegrow2' ],
     waiting: 0,

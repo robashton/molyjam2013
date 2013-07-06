@@ -3,7 +3,7 @@ var Game = require('./game')
 
 game.on('state-changed', function() {
   console.log(game.currentBlurb())
-  console.log(game.availableActions().join())
+  console.log(game.availableActions().map(function(s) { return s.text }).join())
 })
 
 game.on('random-encounter', function() {
