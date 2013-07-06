@@ -2,13 +2,18 @@ var Inventory = require('./inventory')
   , States = require('./states')
   , Actions = require('./actions')
   , Events = require('./events')
+  , EventEmitter = require('events').EventEmitter
+  , extend = require('extend')
 
 var Game = function() {
+  EventEmitter.call(this)
   this.inventory = new Inventory()
-  this.changeState("start")
 }
 
 Game.prototype = {
+  start: function() {
+    this.changeState("start")
+  },
   availableActions: function() {
     return this.state.actions.map(function(s) {
       var action = Actions[s]
@@ -33,9 +38,10 @@ Game.prototype = {
   },
   changeState: function(state) {
     this.state = States[state]
+    this.emit('state-changed')
   },
   tick: function() {
-    if(Math.random() < 0.1) 
+    if(Math.random() < 0.05) 
       this.randomEncounter()
     this.state.tick(this)
   },
@@ -47,7 +53,9 @@ Game.prototype = {
   },
   setActiveEvent: function(ev) {
     this.activeEvent = ev
+    this.emit('random-encounter')
   }
 }
+extend(Game.prototype, EventEmitter.prototype)
 
 module.exports = Game
