@@ -5,6 +5,8 @@ module.exports = function() {
   var game = new Game()
     , self = this
 
+  game.start()
+
   self.availableActionCount = function() {
     return game.availableActions().length
   }

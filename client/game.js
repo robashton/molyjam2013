@@ -43,7 +43,6 @@ Game.prototype = {
   tick: function() {
     if(Math.random() < 0.05) 
       this.randomEncounter()
-    this.state.tick(this)
   },
   randomEncounter: function() {
     var possibleEvents = this.state.possibleEvents
